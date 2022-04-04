@@ -10,7 +10,7 @@ Illumina HiC data: *.R1.fastq.gz, *.R2.fastq.gz
 Contigs: \
 Step1: Extraction hifi.fastq.zg data \
 Step2: HiC data sorting \
-Step3: hifiasm haplotype typing \
+Step3: hifiasm haplotype typing
 
 Scaffold: \
 Step4:
