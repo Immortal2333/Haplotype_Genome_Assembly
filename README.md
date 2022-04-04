@@ -12,3 +12,4 @@ conda install -c hcc smrtlink-tools
 bam2fastq -o hifiasm.gz m001.bam m002.bam
 
 Step2：HiC data
+
