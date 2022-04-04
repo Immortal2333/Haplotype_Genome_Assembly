@@ -1,6 +1,8 @@
 # Genom_assembly
-Genome haplotype assembly process and evaluation method. 
-Author：Xu Wang niue0501011@gmail.com Data:04/04/2022
+Genome haplotype assembly process and evaluation method. \
+Author：Xu Wang niue0501011@gmail.com Data:04/04/2022 \
+
+![process](https://github.com/Immortal2333/Genome_assembly/blob/main/process.jpg?raw=true)
 
 ## Data preparation
 Pacbio Hifi data: *.ccs.bam, *.ccs.bam.pbi \
