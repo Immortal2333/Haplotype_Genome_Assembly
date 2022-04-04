@@ -2,7 +2,7 @@
 Genome haplotype assembly process and evaluation method. \
 Author：Xu Wang niue0501011@gmail.com Data:04/04/2022 
 
-![process](https://github.com/Immortal2333/Diploid_Genome_Assembly/blob/main/process.jpg?raw=true)
+![process]()
 
 ## Data preparation
 Pacbio Hifi data: *.ccs.bam, *.ccs.bam.pbi \
