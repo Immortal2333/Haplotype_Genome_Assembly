@@ -86,7 +86,7 @@ sh /public/home/wangxu02/software/juicer/CPU/juicer.sh -t 20 -s DpnII -g hap0 \
 -p /juicer/hap0_DpnII.chrom.sizes \
 -y /juicer/hap0_DpnII.txt
 ```
-Get /juicer/aligned/merged_nodups.txt
+Got /juicer/aligned/merged_nodups.txt
 ### Step5: Ragtag
 
 
