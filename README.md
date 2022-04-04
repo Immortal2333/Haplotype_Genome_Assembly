@@ -1,4 +1,4 @@
-# Genom_assembly
+# Genome_assembly
 Genome haplotype assembly process and evaluation method. \
 Author：Xu Wang niue0501011@gmail.com Data:04/04/2022 \
 
