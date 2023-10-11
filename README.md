@@ -130,13 +130,31 @@ ragtag/hap0.assembly aligned/merged_nodups.txt
 Notes: Alignment score is the quality of of matching between the read-sequence and reference-sequence. Mapping quality is the confidence that the read is correctly mapped to the genomic coordinates. For example, a read may be mapped to several genomic locations with almost a perfect match in all locations. In that case, alignment score will be high but mapping quality will be low.
 
 ### Step5: Manual adjusted genome ([Juicebox](https://github.com/aidenlab/Juicebox/wiki/Download))
-In the output of step4 section, we will get two file: `final.assembly` and `0.hic`. Loading these files to **Juicebox** for visualization. 
+In the output of step4 section, we will get two files: `final.assembly` and `0.hic`. Loading these files to **Juicebox** for visualization. 
 * [Juicebox Official Website User Manual](https://github.com/aidenlab/Juicebox/wiki)
 * [Tutorial video for Juicebox Assembly Tools](https://www.youtube.com/watch?v=Nj7RhQZHM18)
-<div style="display:flex;">
-  <img1 src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/hic.heatmap.png" style="flex:50%; padding:5px;">
-  <img2 src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/contigs.details.png" style="flex:50%; padding:5px;">
-</div>
+
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/hic.heatmap.png" align="left" width="30%">
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/contigs.details.png" align="left" width="50%"> 
+
+Input these files into Juicebox, and you will find that high-depth long-reads and short-reads sequencing contribute significantly to genome completeness, surpassing the genome assembly based solely on short-reads sequencing. Most chromosomes were constructed by single contig.
+
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Invert.contigs01.png" align="left" width="24%">
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Invert.contigs02.png" align="left" width="24%">
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Rm.edge.fragments.png" align="left" width="25%">
+
+Manually check for splicing errors and directional errors in chromosomes, if any, please manually adjust them back. In addition, manually remove fragments from the edges of both ends of the chromosome.
+
+Finally, manually output `hap0.review.assembly` file from Juicebox. 
+
+### Step6: Re 3d-dna
+```
+USAGE: ./run-asm-pipeline-post-review.sh [options] -r <review.assembly> <path_to_input_fasta> <path_to_input_mnd> 
+
+/your_download_path/3d-dna/run-asm-pipeline-post-review.sh -q 0 \
+-r hap0.review.assembly reference/hap0.fa aligned/merged_nodups.txt > 3d.log
+```
+
 
 
 
