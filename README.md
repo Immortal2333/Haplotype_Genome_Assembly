@@ -113,7 +113,7 @@ hap1/ragtag.scaffold.agp hap1.assembly
 python /your_download_path/juicebox_scripts/agp2assembly.py \
 hap2/ragtag.scaffold.agp hap2.assembly
 ```
-* Combined the recording of contigs assembly. **The script has uploaded in this pipeline.**
+* Combined the recording of contigs assembly. The script, `01_2assemblyto2.py`, has uploaded in this pipeline.
 ```
 python 01_2assemblyto2.py hap1.assembly hap2.assembly hap0.assembly       
 ```
@@ -129,7 +129,7 @@ ragtag/hap0.assembly aligned/merged_nodups.txt
 ```
 Notes: Alignment score is the quality of of matching between the read-sequence and reference-sequence. Mapping quality is the confidence that the read is correctly mapped to the genomic coordinates. For example, a read may be mapped to several genomic locations with almost a perfect match in all locations. In that case, alignment score will be high but mapping quality will be low.
 
-### Step5: Manual adjusted genome ([Juicebox](https://github.com/aidenlab/Juicebox/wiki/Download))
+### Step5: Manual adjusted hic-heatmap ([Juicebox](https://github.com/aidenlab/Juicebox/wiki/Download))
 In the output of step4 section, we will get two files: `final.assembly` and `0.hic`. Loading these files to **Juicebox** for visualization. 
 * [Juicebox Official Website User Manual](https://github.com/aidenlab/Juicebox/wiki)
 * [Tutorial video for Juicebox Assembly Tools](https://www.youtube.com/watch?v=Nj7RhQZHM18)
@@ -154,18 +154,45 @@ USAGE: ./run-asm-pipeline-post-review.sh [options] -r <review.assembly> <path_to
 /your_download_path/3d-dna/run-asm-pipeline-post-review.sh -q 0 \
 -r hap0.review.assembly reference/hap0.fa aligned/merged_nodups.txt > 3d.log
 ```
+After this step, you will get these files, `.final.hic` and `.final.assembly`. You can input these files into **juicebox** again to double-check the Hi-C heatmap. If it is not satisfactory, please repeat **Step 6** after manual adjustments until the Hi-C heatmap meets your expectations.
 
+### Step7: Sequence extraction
+The script, `getFaLen.pl`, has been uploaded in this pipeline.
+```
+perl getFaLen.pl -i hap0.FINAL.fasta -o hap0.FINAL.scaffold.length.txt
+```
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/phased.chr01.png" align="left" width="33%">
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/phased.chr02.png" align="left" width="15%">
 
+Manually phase the chromosomes using Juicebox, dividing haplotypes in order. Create two files, `list1.txt` and `list2.txt`, for sequence extraction. Seqtk can be found in [Github](https://github.com/lh3/seqtk).
 
+```
+Usage:   seqtk subseq [options] <in.fa> <in.bed>|<name.list>
 
+seqtk subseq hap0.FINAL.fasta list1.txt > hap1.FINAL.fa
+seqtk subseq hap0.FINAL.fasta list2.txt > hap2.FINAL.fa
+```
+Note: You can use `sed -i 's///g hap1.FINAL.fa'` command to replace the chromosome ID.
 
+### Step8: Gap-filled
+The script, `getgaps.py`, has been uploaded in this pipeline. The output is gff format.
+```
+python3 getgaps.py hap1.FINAL.fa > hap1.FINAL.gaps.gff3
+python3 getgaps.py hap2.FINAL.fa > hap2.FINAL.gaps.gff3
+```
+Four tools need you dowmload:
+* [minimap2](https://github.com/lh3/minimap2)
+* [samtools](https://github.com/samtools/samtools)
+* [IGV tools](https://igv.org/doc/desktop/#DownloadPage/)
+* [seqkit](https://github.com/shenwei356/seqkit)
 
-
-
-
-
-
-
+### Step9: Genome statistics and assessment
+* Basic statistics
+* Genomic heterozygosity
+* Chromosome lengths
+* BUSCOs
+* QV (compeleteness)
+* Swith error and Hamming error
 
 
 
