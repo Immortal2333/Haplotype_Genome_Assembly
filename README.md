@@ -1,4 +1,4 @@
-# Haplotype Genome Assembly and Evaluation
+# Haplotype Genome Assembly and Assessment
 ![Update](https://img.shields.io/badge/Update-10/10/2023-green?logo=github)
 ![Author](https://img.shields.io/badge/Author-Xu.Wang-orange)
 ![Email](https://img.shields.io/badge/Email-571720850@qq.com-blue?)
