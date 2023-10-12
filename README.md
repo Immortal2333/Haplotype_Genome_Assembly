@@ -139,9 +139,9 @@ In the output of step4 section, we will get two files: `final.assembly` and `0.h
 
 Input these files into Juicebox, and you will find that high-depth long-reads and short-reads sequencing contribute significantly to genome completeness, surpassing the genome assembly based solely on short-reads sequencing. Most chromosomes were constructed by single contig.
 
-<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Invert.contigs01.png" align="left" width="24%">
-<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Invert.contigs02.png" align="left" width="24%">
-<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Rm.edge.fragments.png" align="left" width="25%">
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Invert.contigs01.png" align="left" width="25%">
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Invert.contigs02.png" align="left" width="25%">
+<img src="https://github.com/Immortal2333/Haplotype_Genome_Assembly/blob/main/Juicebox_pics/Rm.edge.fragments.png" align="left" width="26%">
 
 Manually check for splicing errors and directional errors in chromosomes, if any, please manually adjust them back. In addition, manually remove fragments from the edges of both ends of the chromosome.
 
