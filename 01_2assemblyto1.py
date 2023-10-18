@@ -8,6 +8,7 @@
 @Contact :   571720850@qq.com
 @License :   (C)Copyright 2021-2022, CAAS ShenZhen
 @Desc    :   Combined the recording of contigs assembly
+@Usage   :   python 01_2assemblyto1.py <hap1.assembly> <hap2.assembly> <hap1+hap2.assembly>
 '''
 
 import datetime, sys
