@@ -2,11 +2,11 @@
 # -*- encoding: utf-8 -*-
 '''
 @File    :   getgaps.py
-@Time    :   2029/09/01
-@Author  :   Xu Wang, Qing Zhang
+@Time    :   2022/09/01
+@Author  :   Xu Wang
 @Version :   1.0
 @Contact :   wangxu2018@cau.edu.cn
-@License :   (C)Copyright 2021-2022, CAAS ShenZhen
+@License :   (C)Copyright 2021-2023, CAAS ShenZhen
 @Desc    :   Get the information of gaps with gff format
 @Usage   :   getgaps.py FILENAME.fasta > FILENAME.gff3
 '''
