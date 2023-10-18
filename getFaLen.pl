@@ -1,4 +1,14 @@
-#!perl
+#!/usr/bin/perl
+# -*- encoding: utf-8 -*-
+'''
+File    :   getFaLen.pl
+Time    :   2022/09/01
+Author  :   Qing Zhang, Xu Wang
+Version :   1.0
+Contact :   wangxu2018@cau.edu.cn
+License :   (C)Copyright 2021-2023, CAAS ShenZhen
+Desc    :   Get the length of chromosomes in the genome.fasta
+'''
 
 ###This script is used to get length information for each sequence in a fasta file
 
