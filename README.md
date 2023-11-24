@@ -115,7 +115,7 @@ hap2/ragtag.scaffold.agp hap2.assembly
 ```
 * Combined the recording of contigs assembly. The script, `01_2assemblyto2.py`, has uploaded in this pipeline.
 ```
-python 01_2assemblyto2.py hap1.assembly hap2.assembly hap0.assembly       
+python 01_2assemblyto1.py hap1.assembly hap2.assembly hap0.assembly       
 ```
 ### Step4: [3d-dna](https://github.com/aidenlab/3d-dna)
 ```
